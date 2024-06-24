@@ -34,31 +34,12 @@
 	--shadow-4: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
 
 	/* Background Colors */
-	--clr-white-50: #ffffff;
+	--clr-white: #ffffff;
+	--clr-white-50: #f7f7f7;
 	--clr-white-100: #d9d9d9;
+	--clr-white-200: #5a5a5a;
 	/* Used for header and footer */
 	--clr-prussian-blue: #003153;
-	/* Card Colors */
-	--clr-pruce: #d496a7;
-	--clr-pruce-1: #84364b;
-	--clr-periwinkle: #d8dcff;
-	--clr-periwinkle-1: #0012b1;
-	--clr-misty-rose: #f1dede;
-	--clr-misty-rose-1: #843838;
-	--clr-mint-green: #c9fbff;
-	--clr-mint-green-1: #00a8b5;
-	--clr-beige: #f2f5de;
-	--clr-beige-1: #86942d;
-	--clr-white: #f7f7f7;
-	--clr-white-1: #5a5a5a;
-	--clr-champagne-pink: #fceade;
-	--clr-champagne-pink-1: #a54b0f;
-	--clr-coral: #ff8a5b;
-	--clr-coral-1: #bd3600;
-	--clr-melon: #efb0a1;
-	--clr-melon-1: #9d341b;
-	--clr-onyx: #403f4c;
-	--clr-onyx-1: #525161;
 }
 
 * {

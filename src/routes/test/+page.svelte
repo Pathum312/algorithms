@@ -70,7 +70,7 @@
 		display: flex;
 		align-items: center;
 		justify-content: center;
-		color: var(--clr-white-50);
+		color: var(--clr-white);
 		font-size: var(--fs-heading-0);
 		background-color: var(--clr-prussian-blue);
 	}
@@ -81,7 +81,7 @@
 		align-items: center;
 		font-size: var(--fs-0);
 		justify-content: center;
-		color: var(--clr-white-50);
+		color: var(--clr-white);
 		background-color: var(--clr-prussian-blue);
 	}
 
@@ -95,7 +95,7 @@
 		margin: 1rem 0;
 		border-radius: 0.5rem;
 		filter: var(--shadow-3);
-		color: var(--clr-white-1);
+		color: var(--clr-white-200);
 		background-color: var(--clr-white);
 	}
 
