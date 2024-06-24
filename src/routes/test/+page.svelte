@@ -1,70 +1,63 @@
-<div class="container">
-	<header>Algorithms</header>
-	<main>
-		<section>
-			<h2>Sorting Algorithms</h2>
-			<div class="card">
-				<h3>Bubble Sort</h3>
-				<p class="description">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
-					deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
-					quasi repudiandae.
-				</p>
-			</div>
-			<div class="card">
-				<h3>Other Sort</h3>
-				<p class="description">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
-					deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
-					quasi repudiandae.
-				</p>
-			</div>
-			<div class="card">
-				<h3>Tharaka Sort</h3>
-				<p class="description">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
-					deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
-					quasi repudiandae.
-				</p>
-			</div>
-		</section>
-		<section>
-			<h2>Searching Algorithms</h2>
-			<div class="card">
-				<h3>Bubble Sort</h3>
-				<p class="description">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
-					deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
-					quasi repudiandae.
-				</p>
-			</div>
-			<div class="card">
-				<h3>Other Sort</h3>
-				<p class="description">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
-					deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
-					quasi repudiandae.
-				</p>
-			</div>
-			<div class="card">
-				<h3>Tharaka Sort</h3>
-				<p class="description">
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
-					deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
-					quasi repudiandae.
-				</p>
-			</div>
-		</section>
-	</main>
-	<footer>© 2024 Pathum Senanayake</footer>
-</div>
+<header>Algorithms</header>
+<main>
+	<section>
+		<h2>Sorting Algorithms</h2>
+		<div class="card">
+			<h3>Bubble Sort</h3>
+			<p class="description">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
+				deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
+				quasi repudiandae.
+			</p>
+		</div>
+		<div class="card">
+			<h3>Other Sort</h3>
+			<p class="description">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
+				deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
+				quasi repudiandae.
+			</p>
+		</div>
+		<div class="card">
+			<h3>Tharaka Sort</h3>
+			<p class="description">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
+				deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
+				quasi repudiandae.
+			</p>
+		</div>
+	</section>
+	<section>
+		<h2>Searching Algorithms</h2>
+		<div class="card">
+			<h3>Bubble Sort</h3>
+			<p class="description">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
+				deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
+				quasi repudiandae.
+			</p>
+		</div>
+		<div class="card">
+			<h3>Other Sort</h3>
+			<p class="description">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
+				deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
+				quasi repudiandae.
+			</p>
+		</div>
+		<div class="card">
+			<h3>Tharaka Sort</h3>
+			<p class="description">
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere blanditiis, asperiores
+				deserunt similique unde distinctio ipsam maxime rem, veniam placeat esse obcaecati, culpa
+				quasi repudiandae.
+			</p>
+		</div>
+	</section>
+</main>
+<footer>© 2024 Pathum Senanayake</footer>
 
 <style>
-	.container {
-		/* padding: 1rem; */
-		background-color: antiquewhite;
-	}
-
 	header {
 		padding: 1rem;
 		display: flex;
