@@ -2,6 +2,7 @@
 	import { Header, Footer, Content, Section, Card } from '$lib/components/ui';
 </script>
 
+<title>Algorithms</title>
 <Header align="center">Algorithms</Header>
 <Content>
 	<Section title="Sorting Algorithms">
