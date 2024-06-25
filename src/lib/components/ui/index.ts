@@ -7,3 +7,6 @@ export { default as Section } from './Section/component.svelte';
 export { default as Card } from './Card/component.svelte';
 export { default as CardTitle } from './Card/CardTitle/component.svelte';
 export { default as CardDescription } from './Card/CardDescription/component.svelte';
+// List Components
+export { default as List } from './List/component.svelte';
+export { default as ListItem } from './List/ListItem/component.svelte';

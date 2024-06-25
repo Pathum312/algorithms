@@ -1,10 +1,12 @@
 <script lang="ts">
 	import {
+		List,
 		Card,
 		Header,
 		Footer,
 		Content,
 		Section,
+		ListItem,
 		CardTitle,
 		CardDescription,
 	} from '$lib/components/ui';
@@ -30,6 +32,32 @@
 				at first. This process is then continued to find the second largest and place it and so on
 				until the data is sorted.
 			</CardDescription>
+			<List name="Pros">
+				<ListItem>
+					<b>Simplicity</b>: It's incredibly easy to understand and implement, making it a great
+					introduction to sorting algorithms.
+				</ListItem>
+				<ListItem>
+					<b>Memory Efficiency</b>: Bubble Sort is an in-place algorithm, meaning it sorts the data
+					within the existing list without requiring additional memory for temporary storage.
+				</ListItem>
+				<ListItem>
+					<b>Nearly Sorted Data</b>: If the data is already partially sorted, Bubble Sort can be
+					surprisingly efficient as it only needs a few passes to complete the sorting
+				</ListItem>
+			</List>
+			<List name="Cons">
+				<ListItem>
+					<b>Inefficiency</b>: For large datasets, Bubble Sort becomes very slow. Its time
+					complexity is O(n^2), meaning the sorting time increases dramatically with the number of
+					elements. This is because it makes numerous comparisons and swaps even when the data is
+					mostly sorted.
+				</ListItem>
+				<ListItem>
+					<b>Unnecessary Swaps</b>: Bubble Sort might perform many unnecessary comparisons and
+					swaps, especially on nearly sorted data.
+				</ListItem>
+			</List>
 		</Card>
 		<Card>
 			<CardTitle>Merge Sort</CardTitle>
