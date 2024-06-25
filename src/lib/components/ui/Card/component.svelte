@@ -1,11 +1,5 @@
-<script lang="ts">
-	export let title = '';
-	export let description = '';
-</script>
-
 <div class="card">
-	<h3>{title}</h3>
-	<p class="description">{description}</p>
+	<slot />
 </div>
 
 <style>
@@ -16,9 +10,5 @@
 		filter: var(--shadow-3);
 		color: var(--clr-white-200);
 		background-color: var(--clr-white);
-	}
-
-	.description {
-		max-width: 70ch;
 	}
 </style>
