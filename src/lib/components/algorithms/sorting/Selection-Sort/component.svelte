@@ -134,7 +134,7 @@
 	}
 
 	.item {
-		border-radius: 0.5rem;
+		border-radius: 0.25rem;
 		padding: 0.25rem 0.5rem;
 		filter: var(--shadow-1);
 		background-color: var(--clr-white);
@@ -142,7 +142,7 @@
 
 	button {
 		border: none;
-		border-radius: 0.5rem;
+		border-radius: 0.25rem;
 		padding: 0.25rem 0.5rem;
 		filter: var(--shadow-1);
 		color: var(--clr-white-200);
