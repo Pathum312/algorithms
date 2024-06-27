@@ -95,46 +95,35 @@
 	};
 </script>
 
-<div class="container">
-	<div class="card">
-		<div class="array">
-			{#each unsorted as item, index}
-				<div
-					class="item"
-					class:highlighted-red={index === comparingFirstIndex || index === comparingSecondIndex}
-					class:highlighted-yellow={index === swappingFirstIndex || index === swappingSecondIndex}
-					class:highlighted-green={index === swappedFirstIndex || index === swappedSecondIndex}
-				>
-					{item}
-				</div>
-			{/each}
-		</div>
-		<div class="buttons">
-			<button on:click|preventDefault={() => reset('ALL')} class="highlighted-red">Reset</button>
-			<button on:click|preventDefault={selectionSort} class="highlighted-green">Sort</button>
-		</div>
+<div class="algo-container">
+	<div class="array">
+		{#each unsorted as value, index}
+			<div
+				class="item"
+				class:highlighted-red={index === comparingFirstIndex || index === comparingSecondIndex}
+				class:highlighted-yellow={index === swappingFirstIndex || index === swappingSecondIndex}
+				class:highlighted-green={index === swappedFirstIndex || index === swappedSecondIndex}
+			>
+				{value}
+			</div>
+		{/each}
+	</div>
+	<div class="buttons">
+		<button on:click|preventDefault={() => reset('ALL')}>Reset</button>
+		<button on:click={selectionSort}>Sort</button>
 	</div>
 </div>
 
 <style>
-	.container {
-		width: auto;
-		height: 100vh;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		background-color: antiquewhite;
-	}
-
-	.card {
-		width: 80%;
+	.algo-container {
 		padding: 1rem;
 		display: flex;
+		margin-top: 1rem;
 		align-items: center;
 		border-radius: 0.5rem;
 		flex-direction: column;
 		justify-content: center;
-		background-color: azure;
+		color: var(--clr-white-200);
 	}
 
 	.array {
@@ -145,29 +134,33 @@
 	}
 
 	.item {
-		border-radius: 0.5rem;
+		border-radius: 0.25rem;
 		padding: 0.25rem 0.5rem;
-		border: 2px solid black;
-	}
-
-	.highlighted-green {
-		color: #479e21;
-		background-color: #beedaa;
-	}
-
-	.highlighted-yellow {
-		color: #c3a700;
-		background-color: #ffee88;
-	}
-
-	.highlighted-red {
-		color: #a91842;
-		background-color: #e43f6f;
+		filter: var(--shadow-1);
+		background-color: var(--clr-white);
 	}
 
 	button {
-		margin: 0.25rem 0;
-		padding: 0.5rem 1rem;
-		border-radius: 0.5rem;
+		border: none;
+		border-radius: 0.25rem;
+		padding: 0.25rem 0.5rem;
+		filter: var(--shadow-1);
+		color: var(--clr-white-200);
+		background-color: var(--clr-white);
+	}
+
+	.highlighted-green {
+		color: var(--clr-green-200);
+		background-color: var(--clr-green);
+	}
+
+	.highlighted-yellow {
+		color: var(--clr-yellow-200);
+		background-color: var(--clr-yellow);
+	}
+
+	.highlighted-red {
+		color: var(--clr-red-200);
+		background-color: var(--clr-red);
 	}
 </style>
