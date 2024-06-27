@@ -10,6 +10,7 @@
 		CardTitle,
 		CardDescription,
 	} from '$lib/components/ui';
+	import { SelectionSort } from '$lib/components/algorithms';
 </script>
 
 <title>Algorithms</title>
@@ -28,6 +29,7 @@
 				them into their correct position. By the end, just like a perfectly organized photo, the
 				list is sorted.
 			</CardDescription>
+			<SelectionSort />
 			<List name="Pros">
 				<ListItem>
 					<b>Simple and Easy to Understand</b>: Like Bubble Sort, Selection Sort is straightforward

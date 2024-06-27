@@ -40,6 +40,13 @@
 	--clr-white-200: #5a5a5a;
 	/* Used for header and footer */
 	--clr-prussian-blue: #003153;
+	/* Highlight Colors */
+	--clr-yellow: #ffee88;
+	--clr-yellow-200: #c3a700;
+	--clr-green: #beedaa;
+	--clr-green-200: #479e21;
+	--clr-red: #e43f6f;
+	--clr-red-200: #a91842;
 }
 
 * {
