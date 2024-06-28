@@ -10,7 +10,7 @@
 		CardTitle,
 		CardDescription,
 	} from '$lib/components/ui';
-	import { SelectionSort } from '$lib/components/algorithms';
+	import { SelectionSort, BubbleSort } from '$lib/components/algorithms';
 </script>
 
 <title>Algorithms</title>
@@ -67,6 +67,7 @@
 				end. This continues until no swaps are needed, signifying a perfectly sorted list, just like
 				a calm beach with swimmers in the right order.
 			</CardDescription>
+			<BubbleSort />
 			<List name="Pros">
 				<ListItem>
 					<b>Simplicity</b>: It's incredibly easy to understand and implement, making it a great

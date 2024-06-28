@@ -7,6 +7,20 @@
 	$: comparingSecondIndex = -1;
 	$: unsorted = [64, 34, 25, 12, 22, 90, 11];
 
+	/**
+	 * Reset the values used to highlight the values in the array.
+	 * @param type? - 'ALL' for resetting everything
+	 */
+	const reset = (type?: string) => {
+		swappedFirstIndex = -1;
+		swappedSecondIndex = -1;
+		swappingFirstIndex = -1;
+		swappingSecondIndex = -1;
+		comparingFirstIndex = -1;
+		comparingSecondIndex = -1;
+		if (type === 'ALL') unsorted = [64, 34, 25, 12, 22, 90, 11];
+	};
+
 	enum HighlightType {
 		COMPARE = 'COMPARE',
 		SWAP_SELECTED = 'SWAP-SELECTED',
@@ -38,60 +52,38 @@
 		}
 	};
 
-	/**
-	 * Reset the values used to highlight the values in the array.
-	 * @param type? - 'ALL' for resetting everything
-	 */
-	const reset = (type?: string) => {
-		swappedFirstIndex = -1;
-		swappedSecondIndex = -1;
-		swappingFirstIndex = -1;
-		swappingSecondIndex = -1;
-		comparingFirstIndex = -1;
-		comparingSecondIndex = -1;
-		if (type === 'ALL') unsorted = [64, 34, 25, 12, 22, 90, 11];
-	};
+	const bubbleSort = async () => {
+		let swapped;
 
-	/**
-	 * Selection sort algo thats highlights and shows the way the values are analyzed.
-	 */
-	const selectionSort = async () => {
-		let min_idx, i, j;
-
-		for (i = 0; i < unsorted.length - 1; i++) {
-			min_idx = i;
-			for (j = i + 1; j < unsorted.length; j++) {
+		do {
+			swapped = false;
+			for (let i = 0; i < unsorted.length - 1; i++) {
 				// Remove any previous highlighting
 				reset();
 				// Highlights the first value and all other values its being compared too.
-				highlight(HighlightType.COMPARE, i, j);
+				highlight(HighlightType.COMPARE, i, i + 1);
 				// Adds a 1 second delay
 				await new Promise(resolve => setTimeout(resolve, 1000));
-				if (unsorted[j] < unsorted[min_idx]) min_idx = j;
+				if (unsorted[i] > unsorted[i + 1]) {
+					// Remove any previous highlighting
+					reset();
+					// Highlights the first value and all other values its being compared too.
+					highlight(HighlightType.SWAP_SELECTED, i, i + 1);
+					// Adds a 1 second delay
+					await new Promise(resolve => setTimeout(resolve, 1000));
+					let temp = unsorted[i];
+					unsorted[i] = unsorted[i + 1];
+					unsorted[i + 1] = temp;
+					// Remove any previous highlighting
+					reset();
+					// Highlights the first value and all other values its being compared too.
+					highlight(HighlightType.SWAP_FINISHED, i, i + 1);
+					// Adds a 1 second delay
+					await new Promise(resolve => setTimeout(resolve, 1000));
+					swapped = true;
+				}
 			}
-			// Remove any previous highlighting
-			reset();
-			// Highlights the first value and second value it is going to be swapped with.
-			highlight(HighlightType.SWAP_SELECTED, i, min_idx);
-			// Adds a 1 second delay
-			await new Promise(resolve => setTimeout(resolve, 1000));
-			if (min_idx !== i) {
-				[unsorted[min_idx], unsorted[i]] = [unsorted[i], unsorted[min_idx]];
-				// Remove any previous highlighting
-				reset();
-				// Highlights the first value and second value it was swapped with.
-				highlight(HighlightType.SWAP_FINISHED, i, min_idx);
-				// Adds a 1 second delay
-				await new Promise(resolve => setTimeout(resolve, 1000));
-			} else {
-				// Remove any previous highlighting
-				reset();
-				// Highlights a single value as both indexes are of the same value.
-				highlight(HighlightType.SWAP_FINISHED, i, min_idx);
-				// Adds a 1 second delay
-				await new Promise(resolve => setTimeout(resolve, 1000));
-			}
-		}
+		} while (swapped);
 	};
 </script>
 
@@ -110,7 +102,7 @@
 	</div>
 	<div class="buttons">
 		<button on:click|preventDefault={() => reset('ALL')}>Reset</button>
-		<button on:click={selectionSort}>Sort</button>
+		<button on:click|preventDefault={bubbleSort}>Sort</button>
 	</div>
 </div>
 
