@@ -10,7 +10,7 @@
 		CardTitle,
 		CardDescription,
 	} from '$lib/components/ui';
-	import { SelectionSort, BubbleSort } from '$lib/components/algorithms';
+	import { SelectionSort, BubbleSort, InjectionSort } from '$lib/components/algorithms';
 </script>
 
 <title>Algorithms</title>
@@ -92,6 +92,56 @@
 				<ListItem>
 					<b>Unnecessary Swaps</b>: Bubble Sort might perform many unnecessary comparisons and
 					swaps, especially on nearly sorted data.
+				</ListItem>
+			</List>
+		</Card>
+		<Card>
+			<CardTitle>Injection Sort</CardTitle>
+			<CardDescription>
+				Injection sort shines for its simplicity and efficiency with small datasets. It's easy to
+				understand and code, and requires minimal extra memory. However, its Achilles' heel is large
+				datasets. In those cases, it becomes quite slow compared to other sorting algorithms, taking
+				significantly more time to sort as the number of elements increases. It's also a good choice
+				for data that's already partially sorted, as it can take advantage of the existing order.
+			</CardDescription>
+			<InjectionSort />
+			<List name="Pros">
+				<ListItem>
+					<b>Simple and Easy to Implement</b>: Insertion sort is one of the easiest sorting
+					algorithms to understand and code. It mimics the act of sorting cards in your hand, making
+					it intuitive.
+				</ListItem>
+				<ListItem>
+					<b>Efficient for Small Lists</b>: For small datasets, insertion sort performs quite well.
+					Since it has a low overhead, it can be faster than more complex algorithms for a limited
+					number of elements.
+				</ListItem>
+				<ListItem>
+					<b>Good for Almost Sorted Data</b>: If the data is already partially sorted, insertion
+					sort takes advantage of that. It only needs to perform a few shifts to achieve the final
+					order, making it efficient for pre-sorted lists.
+				</ListItem>
+				<ListItem>
+					<b>Stable Sorting</b>: Insertion sort preserves the original order of elements with equal
+					values. This can be important in certain situations where the relative position of
+					duplicates matters.
+				</ListItem>
+				<ListItem>
+					<b>Low Memory Usage</b>: Insertion sort is an in-place algorithm, meaning it sorts the
+					data within the existing array. It only requires a constant amount of additional space,
+					regardless of the data size.
+				</ListItem>
+			</List>
+			<List name="Cons">
+				<ListItem>
+					<b>Inefficient for Large Lists</b>: The Achilles' heel of insertion sort is its time
+					complexity. For large datasets, the number of comparisons and shifts grows quadratically
+					O(n^2), making it slow compared to other sorting algorithms.
+				</ListItem>
+				<ListItem>
+					<b>Outperformed by Other Algorithms</b>: There are more efficient sorting algorithms like
+					Merge Sort or Quick Sort that have a time complexity of O(n log n) on average. These
+					algorithms become significantly faster for larger datasets.
 				</ListItem>
 			</List>
 		</Card>
