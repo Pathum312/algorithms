@@ -52,6 +52,9 @@
 		}
 	};
 
+	/**
+	 * Bubble sort algo thats highlights and shows the way the values are analyzed.
+	 */
 	const bubbleSort = async () => {
 		let swapped;
 
