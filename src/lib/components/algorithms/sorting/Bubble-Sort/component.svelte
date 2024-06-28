@@ -74,9 +74,7 @@
 					highlight(HighlightType.SWAP_SELECTED, i, i + 1);
 					// Adds a 1 second delay
 					await new Promise(resolve => setTimeout(resolve, 1000));
-					let temp = unsorted[i];
-					unsorted[i] = unsorted[i + 1];
-					unsorted[i + 1] = temp;
+					[unsorted[i], unsorted[i + 1]] = [unsorted[i + 1], unsorted[i]];
 					// Remove any previous highlighting
 					reset();
 					// Highlights the first value and all other values its being compared too.
