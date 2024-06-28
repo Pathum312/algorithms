@@ -10,3 +10,8 @@ export { default as CardDescription } from './Card/CardDescription/component.sve
 // List Components
 export { default as List } from './List/component.svelte';
 export { default as ListItem } from './List/ListItem/component.svelte';
+// Algorithm Components
+export { default as Algorithm } from './Algorithm/component.svelte';
+export { default as Array } from './Algorithm/Array/component.svelte';
+export { default as ButtonCard } from './Algorithm/ButtonCard/component.svelte';
+export { default as Button } from './Algorithm/ButtonCard/Button/component.svelte';

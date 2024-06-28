@@ -1,23 +1,22 @@
 <script lang="ts">
-	$: swappedFirstIndex = -1;
-	$: swappedSecondIndex = -1;
-	$: swappingFirstIndex = -1;
-	$: swappingSecondIndex = -1;
-	$: comparingFirstIndex = -1;
-	$: comparingSecondIndex = -1;
+	import { Algorithm, Array, ButtonCard, Button } from '$lib/components/ui';
+
 	$: unsorted = [64, 34, 25, 12, 22, 90, 11];
+	$: compare = { firstIndex: -1, secondIndex: -1 };
+	$: swapping = { firstIndex: -1, secondIndex: -1 };
+	$: swapped = { firstIndex: -1, secondIndex: -1 };
 
 	/**
 	 * Reset the values used to highlight the values in the array.
 	 * @param type? - 'ALL' for resetting everything
 	 */
 	const reset = (type?: string) => {
-		swappedFirstIndex = -1;
-		swappedSecondIndex = -1;
-		swappingFirstIndex = -1;
-		swappingSecondIndex = -1;
-		comparingFirstIndex = -1;
-		comparingSecondIndex = -1;
+		compare['firstIndex'] = -1;
+		compare['secondIndex'] = -1;
+		swapping['firstIndex'] = -1;
+		swapping['secondIndex'] = -1;
+		swapped['firstIndex'] = -1;
+		swapped['secondIndex'] = -1;
 		if (type === 'ALL') unsorted = [64, 34, 25, 12, 22, 90, 11];
 	};
 
@@ -36,16 +35,16 @@
 	const highlight = async (type: HighlightType, firstIndex: number, secondIndex: number) => {
 		switch (type) {
 			case HighlightType.COMPARE:
-				comparingFirstIndex = firstIndex;
-				comparingSecondIndex = secondIndex;
+				compare['firstIndex'] = firstIndex;
+				compare['secondIndex'] = secondIndex;
 				break;
 			case HighlightType.SWAP_SELECTED:
-				swappingFirstIndex = firstIndex;
-				swappingSecondIndex = secondIndex;
+				swapping['firstIndex'] = firstIndex;
+				swapping['secondIndex'] = secondIndex;
 				break;
 			case HighlightType.SWAP_FINISHED:
-				swappedFirstIndex = firstIndex;
-				swappedSecondIndex = secondIndex;
+				swapped['firstIndex'] = firstIndex;
+				swapped['secondIndex'] = secondIndex;
 				break;
 			default:
 				break;
@@ -88,72 +87,10 @@
 	};
 </script>
 
-<div class="algo-container">
-	<div class="array">
-		{#each unsorted as value, index}
-			<div
-				class="item"
-				class:highlighted-red={index === comparingFirstIndex || index === comparingSecondIndex}
-				class:highlighted-yellow={index === swappingFirstIndex || index === swappingSecondIndex}
-				class:highlighted-green={index === swappedFirstIndex || index === swappedSecondIndex}
-			>
-				{value}
-			</div>
-		{/each}
-	</div>
-	<div class="buttons">
-		<button on:click|preventDefault={() => reset('ALL')}>Reset</button>
-		<button on:click|preventDefault={bubbleSort}>Sort</button>
-	</div>
-</div>
-
-<style>
-	.algo-container {
-		padding: 1rem;
-		display: flex;
-		margin-top: 1rem;
-		align-items: center;
-		border-radius: 0.5rem;
-		flex-direction: column;
-		justify-content: center;
-		color: var(--clr-white-200);
-	}
-
-	.array {
-		gap: 0.5rem;
-		display: flex;
-		margin: 1rem 0;
-		flex-direction: row;
-	}
-
-	.item {
-		border-radius: 0.25rem;
-		padding: 0.25rem 0.5rem;
-		filter: var(--shadow-1);
-		background-color: var(--clr-white);
-	}
-
-	button {
-		border: none;
-		border-radius: 0.25rem;
-		padding: 0.25rem 0.5rem;
-		filter: var(--shadow-1);
-		color: var(--clr-white-200);
-		background-color: var(--clr-white);
-	}
-
-	.highlighted-green {
-		color: var(--clr-green-200);
-		background-color: var(--clr-green);
-	}
-
-	.highlighted-yellow {
-		color: var(--clr-yellow-200);
-		background-color: var(--clr-yellow);
-	}
-
-	.highlighted-red {
-		color: var(--clr-red-200);
-		background-color: var(--clr-red);
-	}
-</style>
+<Algorithm>
+	<Array array={unsorted} {compare} {swapping} {swapped} />
+	<ButtonCard>
+		<Button on:click={() => reset('ALL')}>Reset</Button>
+		<Button on:click={bubbleSort}>Sort</Button>
+	</ButtonCard>
+</Algorithm>
