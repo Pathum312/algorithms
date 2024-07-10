@@ -91,7 +91,7 @@
 				</ListItem>
 				<ListItem>
 					<b>Unnecessary Swaps</b>: Bubble Sort might perform many unnecessary comparisons and
-					swaps, especially on nearly sorted data.
+					swaps, especially on nearly sorted data. OK.
 				</ListItem>
 			</List>
 		</Card>
